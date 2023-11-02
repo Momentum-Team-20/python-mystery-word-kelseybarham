@@ -1,0 +1,16 @@
+- computer selects a word at random
+- display the word with "_" or the letters for correct guesses
+- tell the user number of letters in word
+- ask the user to guess a letter
+- evaluate whether that guess is correct
+    -if correct -> add letter to display
+    -if incorrect -> tell user guess is wrong and subtract 1 from guess count 
+    - if letter already guessed -> tell user they already guessed, no change in guess count
+- game ends
+    - guessed correctly
+    - user runs out of guesses
+
+OPTIONAL:
+- ask user to play again
+- create difficulty levels and let user choose (based on word length)
+- style the terminal output
