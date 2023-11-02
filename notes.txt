@@ -1,4 +1,4 @@
-- computer selects a word at random
+- computer selects a word at random //
 - display the word with "_" or the letters for correct guesses
 - tell the user number of letters in word
 - ask the user to guess a letter

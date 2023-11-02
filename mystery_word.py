@@ -5,14 +5,17 @@ def play_game(file):
     # Open file reader
     with open(file, 'r') as reader:
         text = reader.read()
-
+    # create a list and lowercase it and pick a random word as an answer
     word_list = text.lower().split()
     answer = random.choice(word_list)
     print(answer)
+    # the answer appears on the print log with underscores
+    blank_spots = '_'* len(answer)
+    print(blank_spots)
 
 # get player's input 
 def get_player_input():
-    user_input = (input("Please enter a single letter: "))
+    user_input = input("Please enter a single letter: ")
     return user_input
 
 
