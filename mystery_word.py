@@ -9,6 +9,7 @@ def play_game(file):
     word_list = text.lower().split()
     answer = random.choice(word_list)
     print(f"The answer is: ", answer)
+    print(f'There are {len(answer)} letters in the Mystery Word.')
     guesses = []
     display = ["_" for character in answer]
     print(display)
@@ -18,6 +19,8 @@ def play_game(file):
         guess = input("Guess a letter: ")
         if len(guess) > 1 or not guess.isalpha():
             print('Guess only one letter and NO numbers!')
+        elif guess in guesses:
+            print('You already guessed that letter, try again')
         else:
             guesses.append(guess)
             if guess in answer:
