@@ -8,15 +8,29 @@ def play_game(file):
     # create a list and lowercase it and pick a random word as an answer
     word_list = text.lower().split()
     answer = random.choice(word_list)
-    print(answer)
-    # the answer appears on the print log with underscores
-    blank_spots = '_'* len(answer)
-    print(blank_spots)
+    print(f"The answer is: ", answer)
+    guesses = []
+    display = ["_" for character in answer]
+    print(display)
+    remaining_guesses = 8
+    # get player input and begin loop:
+    while remaining_guesses > 0:
+        guess = input("Guess a letter")
+        if len(guess) > 1 or not guess.isalpha():
+            print('Guess only one letter!')
+        else:
+            guesses.append(guess)
+            if guess in answer:
+                print('Correct')
+            for index in range(len(answer)):
+                if guess == answer[index]:
+                    display[index] = guess
+                    print(display)
+    else:
+        remaining_guesses = remaining_guesses-1
+        print('Incorrect. You have ', f'{remaining_guesses} left')
 
-# get player's input 
-def get_player_input():
-    user_input = input("Please enter a single letter: ")
-    return user_input
+
 
 
 # check to see if player's input is in answer, which will return true or false
