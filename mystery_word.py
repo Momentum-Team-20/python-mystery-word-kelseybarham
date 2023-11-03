@@ -15,27 +15,22 @@ def play_game(file):
     remaining_guesses = 8
     # get player input and begin loop:
     while remaining_guesses > 0:
-        guess = input("Guess a letter")
+        guess = input("Guess a letter: ")
         if len(guess) > 1 or not guess.isalpha():
-            print('Guess only one letter!')
+            print('Guess only one letter and NO numbers!')
         else:
             guesses.append(guess)
             if guess in answer:
                 print('Correct')
+            else:
+                remaining_guesses = remaining_guesses-1
+                print('Incorrect. You have ', f'{remaining_guesses} left')
             for index in range(len(answer)):
                 if guess == answer[index]:
                     display[index] = guess
                     print(display)
-    else:
-        remaining_guesses = remaining_guesses-1
-        print('Incorrect. You have ', f'{remaining_guesses} left')
 
 
-
-
-# check to see if player's input is in answer, which will return true or false
-def compare_letters():
-    pass
 
 
 
@@ -44,7 +39,7 @@ def compare_answers():
     if count > 0:
         pass
 
-
+# The whole game needs to be in it's own loop to be able to play again
 
 if __name__ == "__main__":
     import argparse

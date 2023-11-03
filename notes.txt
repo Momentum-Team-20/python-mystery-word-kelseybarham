@@ -1,7 +1,7 @@
 - computer selects a word at random //
-- display the word with "_" or the letters for correct guesses
-- tell the user number of letters in word
-- ask the user to guess a letter
+- display the word with "_" or the letters for correct guesses //
+- tell the user number of letters in word //
+- ask the user to guess a letter //
 - evaluate whether that guess is correct
     -if correct -> add letter to display
     -if incorrect -> tell user guess is wrong and subtract 1 from guess count 
