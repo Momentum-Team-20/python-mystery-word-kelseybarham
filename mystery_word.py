@@ -12,6 +12,7 @@ def play_game(file):
     print(f'There are {len(answer)} letters in the Mystery Word.')
     guesses = []
     display = ["_" for character in answer]
+    # How the game will be won is by the number of underscores in display equaling 0 
     print(display)
     remaining_guesses = 8
     # get player input and begin loop:
@@ -32,15 +33,11 @@ def play_game(file):
                 if guess == answer[index]:
                     display[index] = guess
                     print(display)
+            if answer == ''.join(display):
+                print('Congratulations, you won the game!')
+                break
+    print('You lost! The Mystery Word was:', f'{answer}')
 
-
-
-
-
-# Based on results of compare letters function: if true, letter will appear in answer. if false, count goes down. This prints to the print line. If answer has not been guessed and count is greater than 0, the user will be asked for another input. If the answer has been guessed, message appears saying the player has won. If count is 0, you loose message appears.
-def compare_answers():
-    if count > 0:
-        pass
 
 # The whole game needs to be in it's own loop to be able to play again
 
