@@ -7,8 +7,8 @@
     -if incorrect -> tell user guess is wrong and subtract 1 from guess count  //
     - if letter already guessed -> tell user they already guessed, no change in guess count //
 - game ends
-    - guessed correctly
-    - user runs out of guesses
+    - guessed correctly //
+    - user runs out of guesses //
 
 OPTIONAL:
 - ask user to play again

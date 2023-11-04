@@ -17,7 +17,7 @@ def play_game(file):
     remaining_guesses = 8
     # get player input and begin loop:
     while remaining_guesses > 0:
-        guess = input("Guess a letter: ")
+        guess = input("Guess a letter: ").lower()
         if len(guess) > 1 or not guess.isalpha():
             print('Guess only one letter and NO numbers!')
         elif guess in guesses:
@@ -36,7 +36,14 @@ def play_game(file):
             if answer == ''.join(display):
                 print('Congratulations, you won the game!')
                 break
-    print('You lost! The Mystery Word was:', f'{answer}')
+    if remaining_guesses == 0:
+        print('You lost! The Mystery Word was:', f'{answer}')
+
+    reboot_game = input('Want to play the game again? Type Y/N: ').lower()
+    if reboot_game == 'y':
+        play_game(file)
+    else:
+        exit()
 
 
 # The whole game needs to be in it's own loop to be able to play again
